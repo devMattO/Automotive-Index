@@ -25,8 +25,8 @@ FROM car_models;
 
 
 -- Statement 1 --
-CREATE INDEX make_title_index
-  ON car_models (make_title);
+-- CREATE INDEX make_title_index
+--   ON car_models (make_title);
 
 SELECT DISTINCT make_title --DISTINCT eliminates duplicate rows********
 FROM car_models
@@ -35,14 +35,14 @@ WHERE make_code = 'LAM';
 --//33.412 ms//-- after including index
 
 -- Statement 2 --
-CREATE INDEX model_title_index
-ON car_models (model_title);
+-- CREATE INDEX model_title_index
+-- ON car_models (model_title);
 
-CREATE INDEX make_code_index
-ON car_models (make_code);
+-- CREATE INDEX make_code_index
+-- ON car_models (make_code);
 
-CREATE INDEX model_code_index
-ON car_models (model_code);
+-- CREATE INDEX model_code_index
+-- ON car_models (model_code);
 
 SELECT DISTINCT model_title
 FROM car_models
@@ -52,8 +52,8 @@ AND model_code = 'GT-R';
 --//1.630 ms//--  after including index
 
 -- Statement 3 --
-CREATE INDEX year_index
-ON car_models (year);
+-- CREATE INDEX year_index
+-- ON car_models (year);
 
 SELECT make_code, model_code, model_title, year
 FROM car_models
